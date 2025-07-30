@@ -1,7 +1,6 @@
 package com.aw.micro.api.core.review;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,4 +11,15 @@ public interface ReviewService {
             produces = "application/json"
     )
     List<Review> getReviews(@RequestParam(value = "productId",required = true)int productId);
+
+    @PostMapping(
+            value = "/review",
+            consumes = "application/json",
+            produces ="application/json"
+    )
+    Review createReview(@RequestBody Review body);
+
+    @DeleteMapping(value = "/review")
+    void deleteReviews(@RequestParam(value = "productId", required = true)  int productId);
+
 }

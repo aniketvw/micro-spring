@@ -20,6 +20,15 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation("com.mysql:mysql-connector-j:8.3.0")
+
+	implementation 'org.mapstruct:mapstruct:1.6.3'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+	testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+	compileOnly 'org.mapstruct:mapstruct:1.6.3'
+
 	implementation project(':api')
 	implementation project(':util')
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -27,6 +36,6 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}

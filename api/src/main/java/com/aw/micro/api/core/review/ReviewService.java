@@ -1,8 +1,8 @@
 package com.aw.micro.api.core.review;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface ReviewService {
 
@@ -10,16 +10,16 @@ public interface ReviewService {
             value="/review",
             produces = "application/json"
     )
-    List<Review> getReviews(@RequestParam(value = "productId",required = true)int productId);
+    Flux<Review> getReviews(@RequestParam(value = "productId",required = true)int productId);
 
     @PostMapping(
             value = "/review",
             consumes = "application/json",
             produces ="application/json"
     )
-    Review createReview(@RequestBody Review body);
+    Mono<Review> createReview(@RequestBody Review body);
 
     @DeleteMapping(value = "/review")
-    void deleteReviews(@RequestParam(value = "productId", required = true)  int productId);
+    Mono<Void> deleteReviews(@RequestParam(value = "productId", required = true)  int productId);
 
 }

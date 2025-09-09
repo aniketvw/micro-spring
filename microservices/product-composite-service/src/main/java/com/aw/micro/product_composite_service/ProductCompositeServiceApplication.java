@@ -14,9 +14,6 @@ public class ProductCompositeServiceApplication {
 		SpringApplication.run(ProductCompositeServiceApplication.class, args);
 	}
 
-	@Bean
-	RestTemplate restTemplate(){
-		return new RestTemplate();
-	}
+
 
 }

@@ -48,3 +48,6 @@ spring:
       host: localhost
       port: 27017
       database: product-db
+
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"

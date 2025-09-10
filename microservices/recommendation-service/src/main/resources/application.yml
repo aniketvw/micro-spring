@@ -52,3 +52,6 @@ logging:
     root: INFO
     se.magnus: DEBUG
     org.springframework.data.mongodb.core.ReactiveMongoTemplate: DEBUG
+
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"

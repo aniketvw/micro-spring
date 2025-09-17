@@ -1,0 +1,1 @@
+spring.cloud.stream.bindings.messageProcessor-in-0.consumer.instanceIndex: 1

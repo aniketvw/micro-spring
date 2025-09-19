@@ -7,9 +7,11 @@ import org.springframework.boot.actuate.health.CompositeReactiveHealthContributo
 import org.springframework.boot.actuate.health.ReactiveHealthContributor;
 import org.springframework.boot.actuate.health.ReactiveHealthIndicator;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -36,5 +38,15 @@ public class ProductCompositeServiceApplication {
 
 		return CompositeReactiveHealthContributor.fromMap(registry);
 	}
+
+	@Bean
+	@LoadBalanced
+	public WebClient.Builder loadBalancedWebClientBuilder(){
+		return WebClient.builder();
+	}
+
+
+
+
 
 }

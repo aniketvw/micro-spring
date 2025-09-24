@@ -110,6 +110,8 @@ spring:
 
 app.eureka-server: localhost
 
+server.forward-headers-strategy: framework
+
 eureka:
   client:
     serviceUrl:

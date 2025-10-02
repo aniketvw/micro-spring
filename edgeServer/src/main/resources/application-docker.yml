@@ -1,1 +1,9 @@
 app.eureka-server: eureka
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: ${SERVER_SSL_KEY_STORE}
+    key-store-password: ${SERVER_SSL_KEY_STORE_PASSWORD}
+    key-store-type: PKCS12

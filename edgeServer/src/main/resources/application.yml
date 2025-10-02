@@ -6,14 +6,14 @@ spring:
 server:
   port: 8443
   ssl:
+    enabled: true
     key-store-type: PKCS12
     key-store: classpath:keystore/edge.p12
     key-store-password: password
     key-alias: localhost
 
 app:
-  eureka:
-    server: localhost
+  eureka-server: localhost
 
 eureka:
   client:

@@ -121,8 +121,7 @@ services:
   eureka:
     build: discoveryServer
     mem_limit: 512m
-    ports:
-      - "8761:8761"
+
 
   gateway:
     environment:
@@ -130,4 +129,4 @@ services:
     build: edgeServer
     mem_limit: 512m
     ports:
-      - "8080:8080"
+      - "8443:8443"

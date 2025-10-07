@@ -1,4 +1,6 @@
-app.eureka-server: eureka
+app:
+  eureka-server: eureka
+  auth-server: auth-server
 
 server:
   port: 8443

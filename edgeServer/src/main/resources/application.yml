@@ -103,4 +103,6 @@ spring.cloud.gateway.routes:
       - Path=/headerrouting/**
     filters:
       - SetPath=/501
+spring.security.oauth2.resourceserver.jwt.issuer-uri: http://${app.auth-server}:9999
+
 

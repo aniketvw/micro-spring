@@ -114,6 +114,15 @@ app:
   eureka-server: localhost
   auth-server: localhost
 
+  swagger-ui:
+    oauth2-redirect-url: https://localhost:8443/webjars/swagger-ui/oauth2-redirect.html
+    oauth:
+      clientId: writer
+      clientSecret: secret
+      useBasicAuthenticationWithAccessCodeGrant: true
+  oAuthFlow:
+    authorizationUrl: https://localhost:8443/oauth2/authorize
+    tokenUrl: https://localhost:8443/oauth2/token
 
 server.forward-headers-strategy: framework
 
@@ -126,3 +135,5 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 5
     leaseExpirationDurationInSeconds: 5
+
+spring.security.oauth2.resourceserver.jwt.issuer-uri: http://${app.auth-server}:9999

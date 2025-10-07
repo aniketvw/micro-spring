@@ -1,10 +1,10 @@
-package com.aw.discoveryServer;
+package com.aw.authServer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiscoveryServerApplicationTests {
+class AuthServerApplicationTests {
 
 	@Test
 	void contextLoads() {
